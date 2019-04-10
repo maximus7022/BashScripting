@@ -5,7 +5,7 @@ function Menu(){
   echo -e "\e[31m<\e[0m\e[32m---\e[0m\e[31m/\e[0m\e[34mPER_MANAGER\e[0m\e[31m/\e[0m\e[32m---\e[0m\e[31m>\e[0m"
   echo -e "\e[34mChoose number of menu:\e[0m"
   echo -e "\e[31m1)\e[0mChange owner;"
-  echo -e "\e[31m2)\e[0mChange permision;"
+  echo -e "\e[31m2)\e[0mChange permission;"
   echo -e "\e[31m3)\e[0mShow info;"
   echo -e "\e[31m0)\e[0mExit."
   echo -e "\e[31m<-------------------->\e[0m"
@@ -26,13 +26,19 @@ function ChOwn(){
           chown $owner $name
           echo "Owner was changed successfully!"
           echo -e "\e[31m-----------------------------------\e[0m"
+          sleep 2
+          clear
         else
           echo "There is no such user!"
           echo -e "\e[31m-----------------------------------\e[0m"
+          sleep 2
+          clear
         fi
     else
       echo "There is no such file!"
       echo -e "\e[31m-----------------------------------\e[0m"
+      sleep 2
+      clear
     fi
 }
 
@@ -402,7 +408,7 @@ function ChPerm(){
 }
 
 function ShowInfo(){
- echo "Enter route to directory/file you'd like to see info about:"
+ echo "Enter route to directory where the file you'd like to see info about situated:"
  read route
  find $route
  clear
@@ -423,8 +429,10 @@ while [ $exit == true ]
         1) ChOwn; ;;
         2) ChPerm; ;;
         3) ShowInfo; ;;
-        0) echo "Bye!"; let exit=false ;;
+        0) echo -e "\e[31mBye!\e[0m"; let exit=false ;;
         *) echo "R.T.F.M"; ;;
 
      esac
    done
+sleep 1
+clear

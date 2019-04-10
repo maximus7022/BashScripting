@@ -72,7 +72,7 @@ function DeleteUser(){
   cat /etc/passwd | grep $userDel
     if (( $? == 0 ))
     then
-      userdel $userDel
+      userdel -r $userDel
       echo "User was deleted successfully!"
       echo "--------------------------------------------------------"
     else

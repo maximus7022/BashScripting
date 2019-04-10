@@ -7,8 +7,6 @@ echo -e "\e[31m 4)\e[0mDelete Group;"
 echo -e "\e[31m 5)\e[0mEdit User;"
 echo -e "\e[31m 6)\e[0mView Users;"
 echo -e "\e[31m 7)\e[0mView Groups;"
-echo -e "\e[31m 8)\e[0mDelete user /home folders;"
-echo -e "\e[31m 9)\e[0mView all /home user folders:"
 echo -e "\e[31m 0)\e[0mExit."
 echo "--------------------------------"
 read choice
@@ -310,25 +308,4 @@ function ViewGroup(){
     fi
 }
 
-function DeleteFolder(){
-  echo "Enter name of folder you'd like to delete:"
-  read folder
-  cd /home
-  find $folder
-    if (( $? == 0 ))
-    then
-      rm -r /home/$folder
-      echo "Folder $folder was successfully removed!"
-      echo "---------------------------------------------------------"
-    else
-      echo "There is no such folder!"
-      echo "---------------------------------------------------------"
-    fi
-}
-
-function ViewFolder(){
-  cd /home
-  ls -l
-  echo "-----------------------------------------------------------"
-}
 

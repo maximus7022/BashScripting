@@ -18,10 +18,8 @@ while [ $exit == true ]
       5) EditUser; ;;
       6) ViewUser; ;;
       7) ViewGroup; ;;
-      8) DeleteFolder; ;;
-      9) ViewFolder; ;;
-      0) echo "Bye!"; let exit=false ;;
-      *) echo "R.T.F.M"; ;;
+      0) echo -e "\e[31mBye!\e[0m"; let exit=false ;;
+      *) echo -e "R.T.F.M!!!\n---------------------------------------------"; ;;
     
   esac
   done
